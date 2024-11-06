@@ -16,8 +16,8 @@
 print('Проверка на положительное вещественное число, введите что-нибудь')
 number = input()
 
-has_literals = any(char.isalpha() for char in number)
+has_no_literals = all(char.isdecimal() for char in number if char != '.')
 is_negative = number.startswith('-')
 is_invalid = number.count('.') > 1
 
-print(number, '->', not (is_negative or has_literals or is_invalid))
+print(number, '->', has_no_literals and not (is_negative or is_invalid))
