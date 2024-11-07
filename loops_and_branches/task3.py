@@ -1,5 +1,5 @@
-"""Написать упрощенную версию алгоритма RLE.
-
+"""
+Написать упрощенную версию алгоритма RLE.
 Алгоритм RLE объединяет подряд идущие символы в коэффициент и символ.
 
 Пример:
@@ -9,8 +9,8 @@
 """
 
 
-def task3(row: str) -> str:
-    """Упрощенная версия алгоритма RLE."""
+def compress_using_rle(row: str) -> str:
+    """Сжимает строку используя алгоритм RLE."""
     result = ''
     counter = 0
 
@@ -36,4 +36,4 @@ def task3(row: str) -> str:
 
 if __name__ == '__main__':
     print('Введите строку для сжатия')
-    print(input_value := input(), '->', task3(input_value))
+    print(input_value := input(), '->', compress_using_rle(input_value))

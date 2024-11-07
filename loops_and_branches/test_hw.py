@@ -1,7 +1,8 @@
 import pytest
 
-from task1 import task1
-from task3 import task3
+from task1 import compress_to_single as task1
+from task3 import compress_using_rle as task3
+from task4 import encrypt_using_caesar as task4
 
 task1_test_data = [('545', 5), ('12345', 6), ('012', 3), ('6789', 3)]
 
@@ -13,6 +14,21 @@ task3_test_data = [
     ('eee111dd2222...//!!', '3e312d423.2/2!')
 ]
 
+task4_test_data = [
+    ('Dog', 2, 'Fqi'),
+    ('Zak zak', 3, 'Cdn cdn'),
+    ('Python is the BEST', 5, 'Udymts nx ymj GJXY'),
+    ('abcdefjhijklmnopqrstuvwxyz', 1, 'bcdefgkijklmnopqrstuvwxyza'),
+    ('ABCDEFJHIJKLMNOPQRSTUVWXYZ', 2, 'CDEFGHLJKLMNOPQRSTUVWXYZAB'),
+    ('Привет!', 3, 'Привет!'),
+    (
+        'Caesar shift is one of the simplest and most widely known encryption techniques.',
+        20,
+        'Wuymul mbczn cm ihy iz nby mcgjfymn uhx gimn qcxyfs ehiqh yhwlsjncih nywbhckoym.'
+    ),
+    ('Cipher Disk 2000', 40, 'Rxewtg Sxhz 2000')
+]
+
 
 @pytest.mark.parametrize('input_value, expected_value', task1_test_data)
 def test_task1(input_value: str, expected_value: int) -> None:
@@ -22,3 +38,8 @@ def test_task1(input_value: str, expected_value: int) -> None:
 @pytest.mark.parametrize('input_value, expected_value', task3_test_data)
 def test_task3(input_value: str, expected_value: str) -> None:
     assert task3(input_value) == expected_value
+
+
+@pytest.mark.parametrize('input_value, key, expected_value', task4_test_data)
+def test_task4(input_value: str, key: int, expected_value: int) -> None:
+    assert task4(input_value, key) == expected_value
