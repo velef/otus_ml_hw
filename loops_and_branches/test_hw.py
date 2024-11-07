@@ -26,7 +26,9 @@ task4_test_data = [
         20,
         'Wuymul mbczn cm ihy iz nby mcgjfymn uhx gimn qcxyfs ehiqh yhwlsjncih nywbhckoym.'
     ),
-    ('Cipher Disk 2000', 40, 'Rxewtg Sxhz 2000')
+    ('Cipher Disk 2000', 40, 'Rxewtg Sxhz 2000'),
+    ('word', 0, 'word'),
+    ('', 11, '')
 ]
 
 
