@@ -8,5 +8,11 @@
     30789 -> 38709
 """
 
-print('Введите пятизначное число: ')
-print(number := input(), '->', number[0] + number[-2:0:-1] + number[-1])
+print('Введите пятизначное число:')
+number = input()
+
+if len(number) != 5:
+    print('Число должно быть пятизначиным')
+
+else:
+    print(number, '->', number[0] + number[-2:0:-1] + number[-1])
