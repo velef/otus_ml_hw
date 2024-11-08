@@ -24,5 +24,10 @@ def compress_to_single(row: str) -> int:
 
 
 if __name__ == '__main__':
-    print('Введите целое положительное число')
-    print(input_value := input(), '->', compress_to_single(input_value))
+    msg = 'Введите целое положительное число: '
+    input_value = input(msg)
+
+    while not input_value.isdigit():
+        input_value = input(msg)
+
+    print(input_value, '->', compress_to_single(input_value))

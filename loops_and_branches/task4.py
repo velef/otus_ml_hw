@@ -46,10 +46,11 @@ def encrypt_using_caesar(input_sequence: str, key: int) -> str:
 
 
 if __name__ == '__main__':
-    print('Введите строку, которую хотите зашифровать, используйте английские буквы')
-    input_value = input()
+    input_value = input('Введите строку, которую для шифрования, используйте английские буквы: ')
 
-    print('Введите ключ (целое число)')
-    encoding_key = int(input())
+    msg = 'Введите ключ (целое число): '
+    encoding_key = input(msg)
+    while not encoding_key.isdigit():
+        encoding_key = input(msg)
 
-    print(input_value, encoding_key, '->', encrypt_using_caesar(input_value, encoding_key))
+    print(input_value, encoding_key, '->', encrypt_using_caesar(input_value, int(encoding_key)))

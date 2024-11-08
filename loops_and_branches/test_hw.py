@@ -1,10 +1,22 @@
 import pytest
 
 from task1 import compress_to_single as task1
+from task2 import check_seats as task2
 from task3 import compress_using_rle as task3
 from task4 import encrypt_using_caesar as task4
 
 task1_test_data = [('545', 5), ('12345', 6), ('012', 3), ('6789', 3)]
+
+task2_test_data = [
+    ([[0, 1, 1, 0], [1, 0, 0, 0], [0, 1, 0, 0]], 2, 1),
+    ([[0, 1, 1, 0], [1, 0, 0, 0], [0, 1, 0, 0]], 0, False),
+    ([[0, 1, 1, 0], [1, 0, 1, 0], [1, 1, 0, 1]], 2, False),
+    ([[0, 1, 1, 0], [1, 0, 1, 0], [1, 1, 0, 1]], 1, 0),
+    ([[0, 0, 0, 0, 0, 0]], 5, 0),
+    ([[0, 0, 0, 0, 1, 0]], 5, False),
+    ([[0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0]], 5, 1),
+    ([[0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0]], 3, 0),
+]
 
 task3_test_data = [
     ('aaabbbbccccc', '3a4b5c'),
@@ -35,6 +47,11 @@ task4_test_data = [
 @pytest.mark.parametrize('input_value, expected_value', task1_test_data)
 def test_task1(input_value: str, expected_value: int) -> None:
     assert task1(input_value) == expected_value
+
+
+@pytest.mark.parametrize('rows, tickets_amount, expected_value', task2_test_data)
+def test_task2(rows: list[list[int]], tickets_amount: int, expected_value: int or bool) -> None:
+    assert task2(rows, tickets_amount) == expected_value
 
 
 @pytest.mark.parametrize('input_value, expected_value', task3_test_data)

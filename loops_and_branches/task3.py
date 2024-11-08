@@ -35,5 +35,4 @@ def compress_using_rle(row: str) -> str:
 
 
 if __name__ == '__main__':
-    print('Введите строку для сжатия')
-    print(input_value := input(), '->', compress_using_rle(input_value))
+    print(value := input('Введите строку для сжатия: '), '->', compress_using_rle(value))
