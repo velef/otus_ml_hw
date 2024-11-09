@@ -4,6 +4,7 @@ from task1 import compress_to_single as task1
 from task2 import check_seats as task2
 from task3 import compress_using_rle as task3
 from task4 import encrypt_using_caesar as task4
+from task5 import add_note, Card
 
 task1_test_data = [('545', 5), ('12345', 6), ('012', 3), ('6789', 3)]
 
@@ -44,6 +45,31 @@ task4_test_data = [
 ]
 
 
+@pytest.fixture
+def task5_input_data() -> Card:
+    card = {}
+
+    add_note(('Математика', 'Иванов', '5'), card)
+    add_note(('Математика', 'Иванов', '4'), card)
+    add_note(('Литература', 'Иванов', '3'), card)
+    add_note(('Математика', 'Петров', '5'), card)
+    add_note(('Литература', 'Сидоров', '3'), card)
+    add_note(('Литература', 'Петров', '5'), card)
+    add_note(('Литература', 'Иванов', '4'), card)
+    add_note(('Математика', 'Сидоров', '3'), card)
+    add_note(('Математика', 'Петров', '5'), card)
+
+    return card
+
+
+@pytest.fixture
+def task5_reference_data() -> Card:
+    return {
+        'Математика': {'Иванов': ['5', '4'], 'Петров': ['5', '5'], 'Сидоров': ['3']},
+        'Литература': {'Иванов': ['3', '4'], 'Петров': ['5'], 'Сидоров': ['3']},
+    }
+
+
 @pytest.mark.parametrize('input_value, expected_value', task1_test_data)
 def test_task1(input_value: str, expected_value: int) -> None:
     assert task1(input_value) == expected_value
@@ -62,3 +88,7 @@ def test_task3(input_value: str, expected_value: str) -> None:
 @pytest.mark.parametrize('input_value, key, expected_value', task4_test_data)
 def test_task4(input_value: str, key: int, expected_value: int) -> None:
     assert task4(input_value, key) == expected_value
+
+
+def test_task5(task5_input_data, task5_reference_data) -> None:
+    assert task5_input_data == task5_reference_data
