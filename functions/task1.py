@@ -10,6 +10,8 @@
     PythonIsTheBest -> python_is_the_best
 """
 
+import re
+
 
 def is_snake_case(row: str) -> bool:
     """Вернёт True, если в строке есть нижнее подчёркивание."""
@@ -22,30 +24,17 @@ def is_camel_case(row: str) -> bool:
 
 
 def to_snake_case(row: str) -> str:
-    """Конвертирует строку в формат snake_case."""
-    result = ''
-
-    for i, char in enumerate(row):
-        if char.isupper():
-            result += char.lower() if i == 0 else '_' + char.lower()
-
-        else:
-            result += char
-
-    return result
+    """Конвертирует строку в формат snake_case из CamelCase."""
+    return '_'.join(char.lower() for char in re.findall(r'[A-Z][^A-Z]*', row))
 
 
 def to_camel_case(row: str) -> str:
-    """Конвертирует строку в формат CamelCase."""
+    """Конвертирует строку в формат CamelCase из snake_case."""
     return ''.join(word.capitalize() for word in row.split('_'))
 
 
 def convert(row: str) -> str:
-    """Перводит snake_case в CamelCase и наоборот
-
-    :param row: Строка, которую надо отконвертировать.
-    :param to_snake: Если True, строка отконвертируется в snake_case, иначе в CamelCase.
-    """
+    """Перводит snake_case в CamelCase и наоборот."""
     if is_snake_case(row):
         return to_camel_case(row)
 
