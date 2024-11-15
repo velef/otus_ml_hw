@@ -28,3 +28,10 @@ def is_simple(number: int) -> bool:
 def is_digit(row: str) -> bool:
     """Вернёт True, если строка целиком состоит из чисел, иначе False"""
     return all(char.isdigit() for char in row) if row else False
+
+
+if __name__ == '__main__':
+    while not is_digit(input_value := input('Введите целое число для проверки его на простоту: ')):
+        print('Введено некорректное число')
+
+    print(input_value, '->', is_simple(int(input_value)))
