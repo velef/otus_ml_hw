@@ -34,7 +34,7 @@ def to_camel_case(row: str) -> str:
 
 
 def convert(row: str) -> str:
-    """Перводит snake_case в CamelCase и наоборот."""
+    """Переводит snake_case в CamelCase и наоборот."""
     if is_snake_case(row):
         return to_camel_case(row)
 

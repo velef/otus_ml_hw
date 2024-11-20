@@ -30,6 +30,6 @@ def is_input_format_correct(date: str) -> bool:
 
 if __name__ == '__main__':
     while not is_input_format_correct(input_value := input('Введите дату в формате ДД.ММ.ГГГГ ')):
-        print('Дата введена некорреткно')
+        print('Дата введена некорректно')
 
     print(input_value, '->', validate_date(input_value))
