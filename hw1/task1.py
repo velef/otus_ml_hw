@@ -12,7 +12,7 @@ print('Введите пятизначное число:')
 number = input()
 
 if len(number) != 5:
-    print('Число должно быть пятизначиным')
+    print('Число должно быть пятизначным')
 
 else:
     print(number, '->', number[0] + number[-2:0:-1] + number[-1])

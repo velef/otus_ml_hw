@@ -8,9 +8,9 @@ class Car(Vehicle):
     """ТС типа Автомобиль."""
 
     def __init__(
-            self, weight: float = 1000, fuel: float = 40.0, fuel_consumption: float = 1.0
+        self, weight: float = 1000, fuel: float = 40.0, fuel_consumption: float = 1.0
     ) -> None:
-        """Инициализируется ззначениями по умолчанию, добавляет возможность установить движок."""
+        """Инициализируется значениями по умолчанию, добавляет возможность установить движок."""
         super().__init__(weight, fuel, fuel_consumption)
         self.__engine = None
 

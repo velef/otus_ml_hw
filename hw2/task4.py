@@ -21,7 +21,7 @@ ALPHABET_LENGTH = 25
 
 
 def encrypt_using_caesar(input_sequence: str, key: int) -> str:
-    """Прогоняет строку через цифр Цезаря с заданным ключом."""
+    """Прогоняет строку через шифр Цезаря с заданным ключом."""
     encoded = ''
     key = key if key <= ALPHABET_LENGTH else key % ALPHABET_LENGTH
 

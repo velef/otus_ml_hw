@@ -1,7 +1,5 @@
 import pytest
-
 from task2 import is_input_format_correct, validate_date
-
 
 input_format_validation = [('01.12.2024', True), ('01-12.2024', False), ('1.12.2024', False)]
 validate_date_reference = [('29.02.2000', True), ('29.02.2001', False), ('31.04.1962', False)]

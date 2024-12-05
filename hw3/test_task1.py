@@ -1,8 +1,5 @@
-
 import pytest
-
-from task1 import is_snake_case, is_camel_case, to_camel_case, to_snake_case, convert
-
+from task1 import convert, is_camel_case, is_snake_case, to_camel_case, to_snake_case
 
 is_snake_case_parameters = [('is_snake_case', True), ('IsSnakeCase', False)]
 is_camel_case_parameters = [('is_snake_case', False), ('IsSnakeCase', True)]

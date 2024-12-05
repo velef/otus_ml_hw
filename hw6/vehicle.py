@@ -1,6 +1,7 @@
 """Реализация базового класса Vehicle."""
 
 from abc import ABC
+
 from exceptions import LowFuelError, NotEnoughFuel
 
 
@@ -11,7 +12,7 @@ class Vehicle(ABC):
         """Инициализация параметров ТС.
 
         :param weight: Масса ТС.
-        :param fuel: Колличество топлив.
+        :param fuel: Количество топлив.
         :param fuel_consumption: Расход топлива.
         """
         self.weight = weight
@@ -39,7 +40,7 @@ class Vehicle(ABC):
             self.__is_started = True
 
     def move(self, distance: float) -> None:
-        """Обновляет счётчик топлива на значение, оставщееся после проезда указанной дистанции.
+        """Обновляет счётчик топлива на значение, оставшееся после проезда указанной дистанции.
 
         :param distance: Расстояние, которое нужно проехать.
 

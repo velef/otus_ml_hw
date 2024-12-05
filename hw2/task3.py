@@ -28,7 +28,7 @@ def compress_using_rle(row: str) -> str:
             previous_char = char
 
         # В цикле значения добавляются только при смене символа,
-        # поэтому последнюю последовательность надо добавть вручную
+        # поэтому последнюю последовательность надо добавить вручную
         result += str(counter) + previous_char
 
     return result

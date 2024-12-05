@@ -1,7 +1,5 @@
 import pytest
-
 from task3 import is_digit, is_simple
-
 
 is_digit_reference = [
     ('100', True),
@@ -9,7 +7,7 @@ is_digit_reference = [
     ('10.0', False),
     ('-1', False),
     ('', False),
-    ('A1', False)
+    ('A1', False),
 ]
 
 is_simple_reference = [

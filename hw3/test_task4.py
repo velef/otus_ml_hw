@@ -1,7 +1,5 @@
-
 import pytest
-
-from task4 import is_row_literal, is_age_correct, fill_id, Users, is_id_uniq, add_info
+from task4 import Users, add_info, fill_id, is_age_correct, is_id_uniq, is_row_literal
 
 names_parameters = [('', False), ('John', True), ('M1tch', False), ('Anna Maria', False)]
 
@@ -12,7 +10,7 @@ ages_parameters = [
     ('60', True),
     ('61', False),
     ('', False),
-    ('1A', False)
+    ('1A', False),
 ]
 
 id_parameters = [
@@ -33,7 +31,7 @@ uniq_id_parameters = [('00000000', False), ('123', True)]
 users = {
     '00000000': ('Name0', 'Surname0', 50),
     '00000001': ('Name1', 'Surname1', 25),
-    '00000002': ('Name2', 'Surname2', 33)
+    '00000002': ('Name2', 'Surname2', 33),
 }
 
 additional_users = {'00000003': ('Name3', 'Surname3', 40), '00000004': ('Name4', 'Surname4', 20)}

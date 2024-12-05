@@ -8,7 +8,7 @@ class Plane(Vehicle):
     """ТС типа Самолёт."""
 
     def __init__(
-            self, weight: float, fuel: float, fuel_consumption: float, max_cargo: float
+        self, weight: float, fuel: float, fuel_consumption: float, max_cargo: float
     ) -> None:
         """Инициализирует параметры самолёта."""
         super().__init__(weight, fuel, fuel_consumption)
@@ -21,7 +21,7 @@ class Plane(Vehicle):
 
     @property
     def cargo(self) -> float:
-        """Текущий вес груза в самоёлте, защита от записи."""
+        """Текущий вес груза в самолёте, защита от записи."""
         return self.__cargo
 
     def load_cargo(self, amount: float) -> None:
